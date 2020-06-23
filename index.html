@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+
+	<script defer src="assets/all.min.js"></script>
+
+	<link rel="stylesheet" href="styles.css">
+
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<title>Mundylar</title>
+	<link rel="icon" type="image/svg" href="assets/logo.svg">
+
+
+</head>
+
+<body>
+
+	<div class="wrapper">
+
+		<div class="logo"></div>
+
+		<div class="content">
+			<p id="subtitle">Vendemos lençóis , mas não estamos a dormir! Enquanto preparamos novidades para si, entre em contacto connosco!</p>
+
+			<div class="form">
+				<div class="name">
+					<label for="inputName" id="labelName">name*</label>
+					<input type="text" id="inputName" name="Name" onchange="removeError('Name');">
+				</div>
+				<div class="company">
+					<label for="inputCompany" id="labelCompany">company</label>
+					<input type="text" id="inputCompany" name="Company">
+				</div>
+				<div class="website">
+					<label for="inputWebsite" id="labelWebsite">website</label>
+					<input type="text" id="inputWebsite" name="Website">
+				</div>
+				<div class="phone">
+					<label for="inputPhone" id="labelPhone">phone*</label>
+					<input type="number" id="inputPhone" name="Phone" onchange="removeError('Phone');">
+				</div>
+				<div class="email">
+					<label for="inputEmail" id="labelEmail">email*</label>
+					<input type="email" id="inputEmail" name="Email" onchange="removeError('Email');">
+				</div>
+				<div class="message">
+					<label for="inputMessage" id="labelMessage">message*</label>
+					<textarea rows="5" id="inputMessage" name="Message" onchange="removeError('Message');"></textarea>
+				</div>
+				<div class="send">
+					<input type="button" id="inputSubmit" name="Send" value="send" onclick="submit();">
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="contacts">
+			+351 963 493 793<br>+351 244 522 833<br>mundylar@hotmail.com
+		</div>
+
+		<div class="localization">
+			Avenida Adelino Amaro da Costa<br>Galerias Jardins do Lis, Lt. 21, Lj. 20<br>2415-367 Leiria
+		</div>
+
+		<footer class="footer">
+			<span><a href="https://www.facebook.com/mundylar/" target="_blank"><i class="fab fa-facebook-f fa-lg"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://www.instagram.com/mundylar/" target="_blank"><i class="fab fa-instagram fa-lg"></i></a></span>
+		</footer>
+	</div>
+
+</body>
+
+</html>

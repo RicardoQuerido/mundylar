@@ -1,0 +1,298 @@
+:root {
+	height: 100vh;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+	background: url('assets/background.png') no-repeat center 75% fixed, url('assets/background_filter.svg');
+	background-size: cover;
+	background-blend-mode: darken;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-weight: 300;
+	font-size: 19px;
+	color: white;
+}
+
+.wrapper {
+	height: calc(100vh - 6rem);
+	padding: 2rem;
+}
+
+.logo {
+	height: 10vh;
+	background-image: url('assets/logo.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	transform: translateY(40vh);
+	animation: logoAnimation 0.75s linear forwards;
+	animation-delay: 2s;
+}
+
+.content {
+	opacity: 0;
+	animation: contentAnimation 1s ease-in forwards;
+	animation-delay: 2.75s;
+}
+
+@media (min-width: 1162px) and (min-height: 580px) {
+	.wrapper {
+		display: grid;
+		grid-template-columns: 40% 25% 14% 21% !important;
+		grid-template-rows: repeat(3, 1fr) 0.1fr;
+		grid-template-areas: 
+		"one one one   one"
+		"two .   .     .  "
+		"two .   three four"
+		"two .   five  five";
+		align-items: initial;
+	}
+
+	.logo {
+		grid-area: one;
+
+	}
+
+	.content {
+		grid-area: two;
+		align-self: end;
+		padding: 0 3rem !important;
+	}
+
+	.contacts {
+		grid-area: three;
+	}
+
+	.localization {
+		grid-area: four;
+	}
+
+	.footer {
+		grid-area: five;
+	}
+
+	.contacts, .localization, .footer {
+		text-align: left !important;
+		padding: 0 !important;
+		align-self: end;
+		font-size: 19px !important;
+	}
+
+	.form {
+		display: grid;
+		grid-template-columns: repeat(2,1fr);
+		grid-template-rows: repeat(4, fit-content(1fr));
+		grid-gap: 0.5rem;
+		grid-template-areas: 
+		"a a"
+		"b c"
+		"d e"
+		"f f"
+		"g g";
+	}
+
+	.name {
+		grid-area: a;
+	}
+
+	.company {
+		grid-area: b;
+	}
+
+	.website {
+		grid-area: c;
+	}
+
+	.phone {
+		grid-area: d;
+	}
+
+	.email {
+		grid-area: e;
+	}
+
+	.message {
+		grid-area: f;
+	}
+
+	.send {
+		grid-area: g;
+	}
+}
+
+@media (min-width: 1162px) and (min-height: 580px) and (max-height: 850px){
+	:root {
+		font-size: 12px !important;
+	}
+
+	label {
+		font-size: 12px !important;
+	}
+
+	.contacts, .localization, .footer {
+		text-align: left !important;
+		padding: 0 !important;
+		align-self: end;
+		font-size: 12px !important;
+	}
+}
+
+@media (min-width: 1162px) and (min-height: 850px){
+	:root {
+		font-size: 14px !important;
+	}
+
+	label {
+		font-size: 14px !important;
+	}
+
+	.contacts, .localization, .footer {
+		text-align: left !important;
+		padding: 0 !important;
+		align-self: end;
+		font-size: 14px !important;
+	}
+}
+
+@media (min-width: 1600px) and (min-height: 1000px) {
+
+	:root {
+		font-size: 19px !important;
+	}
+
+	label {
+		font-size: 19px !important;
+	}
+
+	.contacts, .localization, .footer {
+		text-align: left !important;
+		padding: 0 !important;
+		align-self: end;
+		font-size: 19px !important;
+	}
+}
+
+#subtitle {
+	padding-top: 1rem;
+	margin: 0;
+	text-align: justify;
+	font-weight: 500;
+}
+
+.form > * {
+	display: flex;
+	flex-direction: column-reverse;
+	padding-top: 1rem;
+}
+
+input, textarea {
+	color: white;
+}
+
+input[type="text"], input[type="number"], input[type="email"], textarea {
+	background: inherit;
+	border: none;
+	border-bottom: 1px solid white;
+	padding-left: 2px;
+	font-size: 1rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input:focus, textarea:focus {
+	border-left: 2px solid white;
+	outline: none;
+}
+
+input[type="button"] {
+	background: rgba(255, 255, 255, 0.25);
+  	border-radius: 3px;
+  	border: none;
+  	padding: 0.5rem;
+}
+
+input[type="button"]:disabled {
+	background: transparent;
+}
+
+textarea {
+	line-height: 1.5rem;
+	background-image: linear-gradient(transparent, transparent calc(1.5rem - 1px), white 0px);
+	background-size: 100% 1.5rem;
+	border-bottom: none;
+	resize: none;
+}
+
+label {
+	font-size: 15px;
+}
+
+.contacts, .localization {
+	width: auto;
+	text-align: right;
+	padding: 1rem 0;
+	font-size: 15px;
+	opacity: 0;
+}
+
+.footer {
+	text-align: center;
+	font-weight: 400;
+	padding: 1rem 0;
+	font-size: 15px;
+	opacity: 0;
+}
+
+.contacts, .localization, .footer {
+	animation: contentAnimation 1s ease-in forwards;
+	animation-delay: 3s;
+}
+
+.footer a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: lightgrey;
+	transition: 200ms;
+}
+
+.error {
+	color: red;
+	font-weight: 500;
+	float: right;
+}
+
+@keyframes logoAnimation {
+	from {
+		transform: translateY(40vh);
+	}
+
+	to {
+		transform: translateY(0); 
+		height: 5vh;
+	}
+}
+
+@keyframes contentAnimation {
+	from {
+		transform: translateY(-15px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
