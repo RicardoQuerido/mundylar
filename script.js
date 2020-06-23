@@ -42,13 +42,13 @@ function appendError(field, errorType) {
 
 	switch(errorType) {
 		case "missing":
-			error_node.appendChild(document.createTextNode(`${field} field is required!`));
+			error_node.appendChild(document.createTextNode(`O campo ${field} é obrigatório!`));
 			break;
 		case "invalid":
-			error_node.appendChild(document.createTextNode(`Invalid ${field} format!`));
+			error_node.appendChild(document.createTextNode(`Formato do campo ${field} inválido!`));
 			break;
 		default:
-			error_node.appendChild(document.createTextNode(`Something is wrong with ${field} field!`));
+			error_node.appendChild(document.createTextNode(`Algo está errado com o campo ${field}!`));
 			break;
 	}
 	
@@ -121,7 +121,7 @@ function sendEmail(fields) {
 		Body : emailBody,
 	})
 	.then(function(message){
-		alert("Your information was submited successfully!");
+		alert("A sua informação foi submetida com sucesso!");
 		buttonSubmit.value = "send"
 		buttonSubmit.disabled = false;
 		clearFields(fields);
