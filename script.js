@@ -62,37 +62,37 @@ function validateFields(name, phone, email, message) {
 
 	if (name === "") {
 		removeError("Name");
-		appendError("Name", "missing");
+		appendError("nome", "missing");
 		status = false;
 	}
 
 	if (phone === "") {
 		removeError("Phone");
-		appendError("Phone", "missing");
+		appendError("telefone", "missing");
 		status = false;
 	}
 
 	else if (!phone_regex.test(phone)) {
 		removeError("Phone");
-		appendError("Phone", "invalid");
+		appendError("telefone", "invalid");
 		status = false;
 	}
 
 	if (email === "") {
 		removeError("Email");
-		appendError("Email", "missing");
+		appendError("email", "missing");
 		status = false;
 	}
 
 	else if (!email_regex.test(email.toLowerCase())) {
 		removeError("Email");
-		appendError("Email", "invalid");
+		appendError("email", "invalid");
 		status = false;
 	}
 
 	if (message === "") {
 		removeError("Message");
-		appendError("Message", "missing");
+		appendError("mensagem", "missing");
 		status = false;
 	}
 
