@@ -42,13 +42,13 @@ function appendError(field, errorType) {
 
 	switch(errorType) {
 		case "missing":
-			error_node.appendChild(document.createTextNode(`O campo ${field} é obrigatório!`));
+			error_node.appendChild(document.createTextNode(`Este campo é obrigatório!`));
 			break;
 		case "invalid":
-			error_node.appendChild(document.createTextNode(`Formato do campo ${field} inválido!`));
+			error_node.appendChild(document.createTextNode(`O formato do campo é inválido!`));
 			break;
 		default:
-			error_node.appendChild(document.createTextNode(`Algo está errado com o campo ${field}!`));
+			error_node.appendChild(document.createTextNode(`Algo está errado com este campo!`));
 			break;
 	}
 	
@@ -62,37 +62,37 @@ function validateFields(name, phone, email, message) {
 
 	if (name === "") {
 		removeError("Name");
-		appendError("nome", "missing");
+		appendError("Name", "missing");
 		status = false;
 	}
 
 	if (phone === "") {
 		removeError("Phone");
-		appendError("telefone", "missing");
+		appendError("Phone", "missing");
 		status = false;
 	}
 
 	else if (!phone_regex.test(phone)) {
 		removeError("Phone");
-		appendError("telefone", "invalid");
+		appendError("Phone", "invalid");
 		status = false;
 	}
 
 	if (email === "") {
 		removeError("Email");
-		appendError("email", "missing");
+		appendError("Email", "missing");
 		status = false;
 	}
 
 	else if (!email_regex.test(email.toLowerCase())) {
 		removeError("Email");
-		appendError("email", "invalid");
+		appendError("Email", "invalid");
 		status = false;
 	}
 
 	if (message === "") {
 		removeError("Message");
-		appendError("mensagem", "missing");
+		appendError("Message", "missing");
 		status = false;
 	}
 
